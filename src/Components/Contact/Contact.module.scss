@@ -1,0 +1,64 @@
+@use "src/Styles/mixins" as m;
+
+.contactPage {
+  margin: 30px 0;
+}
+
+.contactSection {
+  background-color: white;
+  color: #0a0808;
+  padding: 80px 10px;
+  font-family: "Inter", sans-serif;
+}
+
+.contactContainer {
+  max-width: 100%;
+  line-height: 30px;
+  height: auto;
+  text-align: center;
+}
+
+.contactContainer h2 {
+  font-size: 2rem;
+  margin-bottom: 16px;
+  color: #aa2e2e;
+}
+
+.introText {
+  margin-bottom: 40px;
+  font-size: 1.1rem;
+  color: black;
+}
+
+.contactCards {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+}
+
+.contactCard {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  flex: 1 1 280px;
+  max-width: 300px;
+  text-align: left;
+  transition: transform 0.3s;
+  border: 1px solid #2c2c2c;
+}
+
+.contactCard:hover {
+  transform: translateY(-5px);
+  border-color: #ff4747;
+}
+
+.contactCard h4 {
+  margin-bottom: 10px;
+  color: #aa2e2e;
+}
+
+.contactCard p {
+  line-height: 1.5;
+  font-size: 0.95rem;
+  color: black;
+}

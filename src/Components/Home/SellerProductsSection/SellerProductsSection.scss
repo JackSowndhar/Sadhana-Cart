@@ -1,0 +1,239 @@
+@use "src/Styles/mixins" as m;
+
+.thisMonthSection {
+  margin-bottom: 170px;
+  padding: 2rem 1rem;
+  background-color: #fefefe;
+
+  @include m.small {
+    margin-bottom: 100px;
+  }
+}
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-bottom: 2.5rem;
+
+  @include m.small {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.section-header h2 {
+  font-size: 2.3rem;
+  font-weight: 700;
+  color: #2c2c2c;
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
+}
+
+.section-header p {
+  color: #606060;
+  font-size: 1rem;
+  max-width: 700px;
+}
+
+.viewAllBtn {
+  -webkit-tap-highlight-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  width: fit-content;
+  height: fit-content;
+  background: var(--dark-red, #a92e2e);
+  color: var(--white, #fff);
+  padding: 12px 48px;
+  border-radius: 6px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+
+  &:focus-visible {
+    outline: 2px solid var(--tomato, #ff6347);
+    background: transparent;
+    color: var(--tomato, #ff6347);
+  }
+
+  &:hover {
+    background-color: #8e2323;
+  }
+}
+
+.category-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  margin-bottom: 2.5rem;
+}
+
+.filter-btn {
+  padding: 0.45rem 1.2rem;
+  border: 1px solid #ccc;
+  background-color: white;
+  border-radius: 24px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  font-size: 0.95rem;
+
+  &.active,
+  &:hover {
+    background-color: #a92e2e;
+    color: #fff;
+    border-color: #a92e2e;
+  }
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 2rem;
+}
+
+.product-card {
+  position: relative;
+  border: 1px solid #f0f0f0;
+  border-radius: 12px;
+  padding: 1rem;
+  background-color: #ffffff;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+
+  &:hover {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+    transform: translateY(-3px);
+  }
+}
+
+.product-image-wrapper {
+  width: 100%;
+  height: 180px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  border-radius: 10px;
+  background: #fafafa;
+}
+
+.product-image-wrapper img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+
+  .product-card:hover & {
+    transform: scale(1.05);
+  }
+}
+
+.discount-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background-color: #a92e2e;
+  color: white;
+  padding: 0.35rem 0.7rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.product-details {
+  margin-top: 1rem;
+
+  h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #1e1e1e;
+    margin: 0.3rem 0;
+  }
+
+  .seller {
+    font-size: 0.85rem;
+    color: #6b6b6b;
+  }
+
+  .price-section {
+    margin: 0.5rem 0;
+
+    .original-price {
+      text-decoration: line-through;
+      color: #b1b1b1;
+      margin-right: 0.5rem;
+    }
+
+    .current-price {
+      font-size: 1.15rem;
+      color: #a92e2e;
+      font-weight: 700;
+    }
+  }
+
+  .product-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 0.75rem;
+
+    .add-to-cart {
+      flex: 1;
+      padding: 0.5rem;
+      background-color: #1a1a1a;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: background-color 0.2s;
+
+      &:hover {
+        background-color: #2c2c2c;
+      }
+    }
+
+    .wishlist-btn {
+      margin-left: 0.5rem;
+      background: none;
+      border: 1px solid #ccc;
+      border-radius: 50%;
+      width: 36px;
+      height: 36px;
+      font-size: 1.2rem;
+      color: #a92e2e;
+      cursor: pointer;
+      transition: all 0.3s ease;
+
+      &:hover {
+        background-color: #a92e2e;
+        color: white;
+      }
+    }
+  }
+}
+
+// Loading and Empty States
+.loading-screen,
+.error-screen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+  font-size: 2rem;
+  font-weight: 500;
+  color: #555;
+}
+
+.empty-state {
+  margin: 15% auto;
+  text-align: center;
+  line-height: 60px;
+  font-size: 1.8rem;
+  height: 60vh;
+  color: #999;
+}
