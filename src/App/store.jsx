@@ -8,7 +8,7 @@ import userSlice from "../Features/userSlice";
 
 export const store = configureStore({
   reducer: {
-    global: globalSlic,
+    global: globalSlice,
     user: userSlice,
     products: productsSlice,
     forms: formsSlice,
